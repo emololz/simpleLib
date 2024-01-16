@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url(../fonts/HelveticaNeueBlackCondensed.ttf);
+}
+@font-face {
+    font-family: 'Museo Sans';
+    src: url(../fonts/MuseoSansCyrl-100.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body{
+    margin: 0;
+    background-color: #333333;
+    overscroll-behavior: contain;
+}
+.main{
+    height: calc(100vh - 40px);
+    width: calc(100% - 60px);
+    margin: 20px;
+    display: flex;
+}
+.booksTable{
+    background-color: #1F1F1F;
+    width: calc(100% - 300px);
+    height: calc(100% - 40px);
+}
+table{
+    width: calc(100% - 0px);
+    border-top: 7px solid #228d5c;
+    border-collapse: collapse;
+    text-align: left;
+    color: white;
+    font-family: "Museo Sans";
+    font-weight: 800;
+}
+td, th {
+    border: 4px solid #228d5c;
+    padding: 14px;
+    vertical-align: top;
+    line-height: 1.2;
+}
+tr:hover{
+    background-color: #171717;
+}
+tr:active{
+}
+tr:active,
+tr:focus {
+    background-color: #0a0a0a; /* Пример цвета для активного состояния */
+}
+
+.booksMenu{
+    position: fixed;
+    margin-left:calc(100% - 340px);;
+}
+.booksMenu input{
+    font-family: "Museo Sans";
+    font-size: 30px;
+    background-color: #232323;
+    color: #ffffff;
+    border: transparent;
+    width: 290px;
+    height: 60px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    display: block;
+}
+.booksMenu select{
+    font-family: "Museo Sans";
+    font-size: 30px;
+    background-color: #232323;
+    color: #ffffff;
+    border: transparent;
+    width: 300px;
+    height: 60px;
+
+    border-radius: 10px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    display: block;
+}
+.booksMenu select:focus {
+    outline: none;
+}
+.booksMenu input:focus {
+    outline: none;
+}
+.booksMenuButton{
+    font-family: "Helvetica Neue";
+    border: none;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background: #228d5c;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    display: block;
+    background-color: #3f3f3f;
+    margin: 15% auto;
+    padding: 20px;
+    border: transparent;
+    border-radius: 30px;
+    width: 400px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal h2{
+    font-family: "Helvetica Neue";
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+}
+.modal form{
+    display: grid;
+}
+.modal label{
+    font-family: "Museo Sans";
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+}
+.modal p{
+    font-family: "Museo Sans";
+    font-size: 18px;
+    color: #ffffff;
+}
+.modal input{
+    font-family: "Museo Sans";
+    background-color: #2f2f2f;
+    color: #ffffff;
+    border: transparent;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-top:10px;
+}
+.modal input:focus {
+    outline: none;
+}
+#bookId {
+    display: none;
+}

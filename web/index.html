@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Библиотека</title>
+</head>
+
+<body>
+    <section class="main">
+        <!-- Таблица с книгами -->
+        <div class="booksTable">
+            <table id="booksTable">
+                <tr>
+                    <th>Название</th>
+                    <th>Автор</th>
+                </tr>
+            </table>
+        </div>
+        <div class="booksMenu">
+            <input type="text" id="searchInput">
+            <select id="genreSelect">
+                <option value="">Все жанры</option>
+            </select>
+            <button class="booksMenuButton" onclick="libraryApp.openModal('addBook')">Добавить книгу</button>
+            <button class="booksMenuButton" onclick="libraryApp.openModal('editBook')">Редактировать книгу</button>
+            <button class="booksMenuButton" onclick="libraryApp.openModal('deleteBook')">Удалить книгу</button>
+        </div>
+    </section>
+    <!-- Модальное окно -->
+    <div id="addBook" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="libraryApp.closeModal('addBook')">&times;</span>
+            <h2>ДОБАВИТЬ КНИГУ</h2>
+            <!-- Форма для добавления книги -->
+            <form>
+                <label for="book_name">Название:</label>
+                <input type="text" id="book_name" required><br>
+                <label for="author">Автор:</label>
+                <input type="text" id="author" required><br>
+                <label for="author">Жанр:</label>
+                <input type="text" id="genre" required><br>
+                <label for="author">Описание:</label>
+                <input type="text" id="description" required><br>
+                <input type="button" value="Добавить" onclick="addBook()">
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для редактирования книги -->
+    <div id="editBook" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="libraryApp.closeModal('editBook')">&times;</span>
+            <h2>РЕДАКТИРОВАТЬ КНИГУ</h2>
+            <!-- Форма для редактирования книги -->
+            <form>
+                <label for="edited_book_name">Название:</label>
+                <input type="text" id="edited_book_name" required><br>
+                <label for="edited_author">Автор:</label>
+                <input type="text" id="edited_author" required><br>
+                <label for="author">Жанр:</label>
+                <input type="text" id="edited_genre" required><br>
+                <label for="author">Описание:</label>
+                <input type="text" id="edited_description" required><br>
+                <input type="button" value="Сохранить изменения" onclick="editBook()">
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для удаления книги -->
+    <div id="deleteBook" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="libraryApp.closeModal('deleteBook')">&times;</span>
+            <h2>УДАЛИТЬ КНИГУ</h2>
+            <!-- Форма для подтверждения удаления книги -->
+            <form>
+                <p>Вы уверены, что хотите удалить эту книгу?</p>
+                <input type="button" value="Удалить" onclick="deleteBook()">
+            </form>
+        </div>
+    </div>
+    <!-- Модальное окно для просмотра книги -->
+    <div id="viewBook" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="libraryApp.closeModal('viewBook')">&times;</span>
+            <h2 id="bookTitleView">Название книги</h2>
+            <form>
+                <p>Автор: <span id="bookAuthorView"></span></p>
+                <p>Жанр: <span id="bookGenreView"></span></p>
+                <p>Описание: <span id="bookDescriptionView"></span></p>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
