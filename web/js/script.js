@@ -14,6 +14,8 @@ class LibraryApp {
         // Загружаем книги и жанры при инициализации
         eel.get_books()((books) => this.updateBooksTable(books));
         eel.get_genres()(genres => this.populateGenreSelect(genres));
+        // Чистим выпадающий список
+        this.clearSelect()
     }
 
     initializeEventListeners() {
@@ -65,6 +67,14 @@ class LibraryApp {
         // Очистка таблицы
         while (this.table.rows.length > 1) {
             this.table.deleteRow(1);
+        }
+    }
+
+    clearSelect() {
+        // Очистка выпадающего списка жанров
+    let genreSelect = document.getElementById('genreSelect');
+        while (genreSelect.options.length > 0) {
+            genreSelect.remove(0);
         }
     }
 
